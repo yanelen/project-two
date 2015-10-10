@@ -5,7 +5,7 @@ var express = require('express'),
     dbname = "wikidb",
     mongoose = require('mongoose');
 
-server.get('/wiki', function(req, res) {
+server.get('/', function(req, res) {
   res.write("Welcome to WIKI");
   res.end();
 })
