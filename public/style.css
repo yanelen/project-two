@@ -53,7 +53,7 @@ body {
 .jumbotron {
   border-bottom: 1px solid #e5e5e5;
   text-align: center;
-  padding: 14px 24px;
+  padding: 20px 24px;
 }
 
 .btn {
@@ -61,7 +61,6 @@ body {
   color: white;
   font-size: 18px;
   padding: 5px 20px;
-  margin-bottom: 20px;
 }
 
 .btn-small {
@@ -72,15 +71,16 @@ body {
 
 .btn-grey {
   background-color: lightgrey;
-  color: #828282;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .btn-grey:hover {
-  color: white;
+  color: darkgrey;
 }
 
 @media screen and (min-width: 768px) {
-  .header,
+  .header,``
   .marketing,
   .footer {
     padding-right: 0;
@@ -117,6 +117,27 @@ label {
   color: #828282;
 }
 
-.article {
+.articles {
   text-align: left;
+  margin-bottom: 50px;
+}
+
+.article {
+  color: #c7222a;
+  text-decoration: none;
+}
+
+.article:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+.author {
+  color: #c7222a;
+  text-decoration: none;
+}
+
+.author:hover {
+  color: yellow;
+  text-decoration: none;
 }

@@ -16,7 +16,7 @@ mongoose.connect(MONGOURI + "/" + dbname);
 var Article = mongoose.model("article", {
   author: String,
   category: String,
-  content: { type: String, maxlength: 500 },
+  content: { type: String, maxlength: 1000 },
   date: { type: Date, default: Date.now }
 });
 
@@ -147,6 +147,22 @@ server.get('/authors/:name', function (req, res) {
       res.render('authors/articles', {
         author: authorName,
         articles: authorArticles
+      });
+    }
+  });
+});
+
+server.get('/categories/:name', function (req, res) {
+  var categoryName = req.params.name;
+  Article.find({
+    category: categoryName
+  }, function (err, categoryArticles) {
+    if (err) {
+      console.log("ERROR");
+    } else {
+      res.render('categories/articles', {
+        category: categoryName,
+        articles: categoryArticles
       });
     }
   });
