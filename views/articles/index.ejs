@@ -1,0 +1,27 @@
+<a href="/articles/new">Create a new article!</a>
+
+<% articles.reverse().forEach(function (article) { %>
+  <div class="article">
+    <p>
+      <%= article.content %> ---
+      <%= article.category %>
+      <a href="/authors/<%= article.author %>">
+        <%= article.author %>
+      </a>
+      <% var h = new Date().getHours() %>
+      <% var x = "am" %>
+      <% var min = new Date().getMinutes() %>
+      <% var stringMin = min.toString() %>
+      <% if (min < 10) { stringMin = "0" + min.toString()} %>
+      <% if (h >= 13) { h = h - 12; x = "pm" } else { x = "am" } %>
+      <% var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %>
+      <%= month[new Date().getMonth()] %> <%= new Date().getDate() %> at <%= h %>:<%= stringMin %><%= x %>
+      <a href="/articles/<%= article._id %>/edit">edit</a>
+      <form class="delete-button"
+            action="/articles/<%= article._id %>?_method=DELETE"
+            method="post">
+        <input type="submit" value="Delete" onclick="date()">
+      </form>
+    </p>
+  </div>
+<% }) %>

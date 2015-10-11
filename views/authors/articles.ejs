@@ -1,0 +1,8 @@
+<a href="/articles">Back to articles</a>
+
+<h1>Articles by: <%= author %></h1>
+
+<% articles.forEach(function (article) { %>
+  <h3><%= article.content %></h3>
+  <h3><%= article.category %></h3>
+<% }) %>

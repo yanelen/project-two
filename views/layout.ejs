@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Wiki</title>
+
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <script src="/ie-emulation-modes-warning.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">Wiki</h3>
+      </div>
+
+      <div class="jumbotron">
+          <h2><%= author ? author : " " %></h2>
+          <%- body %>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; Yanelen</p>
+      </footer>
+
+    </div>
+
+    <script src="/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,24 +1,22 @@
 {
-  "name": "project-two",
+  "name": "Wiki",
   "version": "1.0.0",
-  "description": "TODO: WRITE EVERYTHING",
+  "description": "Project two",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yanelen/project-two.git"
-  },
-  "author": "",
+  "author": "Yanelen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yanelen/project-two/issues"
-  },
-  "homepage": "https://github.com/yanelen/project-two#readme",
   "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
     "express": "^4.13.3",
-    "mongoose": "^4.1.10"
+    "express-ejs-layouts": "^1.1.0",
+    "express-session": "^1.11.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.10",
+    "morgan": "^1.6.1"
   }
 }
