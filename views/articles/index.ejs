@@ -2,7 +2,7 @@
 
 <% articles.reverse().forEach(function (article) { %>
   <div class="article">
-    <p>
+    <p style="font-size: 16px">
       <%= article.content %> ---
       <%= article.category %>
       <a href="/authors/<%= article.author %>">
@@ -16,12 +16,12 @@
       <% if (h >= 13) { h = h - 12; x = "pm" } else { x = "am" } %>
       <% var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %>
       <%= month[new Date().getMonth()] %> <%= new Date().getDate() %> at <%= h %>:<%= stringMin %><%= x %>
-      <a href="/articles/<%= article._id %>/edit">edit</a>
-      <form class="delete-button"
-            action="/articles/<%= article._id %>?_method=DELETE"
-            method="post">
-        <input type="submit" value="Delete" onclick="date()" class="btn btn-small">
-      </form>
+      <div style="text-align: right;">
+        <a href="/articles/<%= article._id %>/edit" class="btn btn-small" >Edit</a>
+        <form class="delete-button" action="/articles/<%= article._id %>?_method=DELETE" method="post" style="margin-top: -25px; margin-right: 60px;" >
+            <input type="submit" value="Delete" onclick="date()" class="btn btn-small">
+        </form>
+      </div>
     </p>
   </div>
 <% }) %>

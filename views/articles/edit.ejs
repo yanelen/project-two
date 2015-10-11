@@ -1,8 +1,11 @@
 <form action="/articles/<%= article._id %>?_method=PATCH" method="post">
   <div class="form-group">
+    <label>Author</label>
     <input class="form-control" name="article[author]" value="<%= article.author %>"><br/>
+    <label>Article</label>
     <input class="form-control" name="article[content]"  value="<%= article.content %>"><br/>
+    <label>Category</label>
     <input type="text" class="form-control" name="article[category]"  value="<%= article.category %>"><br/>
-  <input type="submit" class="btn-lg">
+  <input type="submit" class="btn">
   </div>
 </form>

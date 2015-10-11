@@ -54,7 +54,6 @@ body {
   border-bottom: 1px solid #e5e5e5;
   text-align: center;
   padding: 14px 24px;
-  font-size: 12px;
 }
 
 .btn {
@@ -68,11 +67,12 @@ body {
 .btn-small {
   font-size: 12px;
   padding: 5px 10px;
+  display: inline;
 }
 
 .btn-grey {
   background-color: lightgrey;
-  color: darkgrey;
+  color: #828282;
 }
 
 .btn-grey:hover {
@@ -94,6 +94,11 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+  .delete-button {
+    margin-right: 200px;
+  }
+
 }
 
 h2 {
@@ -107,9 +112,9 @@ form {
 }
 
 label {
-  font-size: 18px;
-  padding: 10px;
-  text-align: left;
+  font-size: 16px;
+  float: left;
+  color: #828282;
 }
 
 .article {
