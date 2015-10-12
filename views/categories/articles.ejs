@@ -1,8 +1,35 @@
-<a href="/articles">Back to articles</a>
+<a class="btn btn-grey" href="/articles/new">Back to articles</a>
 
-<h1>Category: <%= category %></h1>
+<h1>Subject: <%= category %></h1>
 
-<% articles.forEach(function (article) { %>
-  <h3><%= article.content %></h3>
-  <h3><%= article.author %></h3>
+<% articles.reverse().forEach(function (article) { %>
+  <div class="articles">
+    <a class="category" href="/categories/<%= article.category %>">
+    <%= article.category %>
+    </a>
+    <br>
+    <p style="font-size: 16px">
+      <%= article.content %>
+      <br>
+      by
+      <a class="author" href="/authors/<%= article.author %>">
+        <%= article.author %>
+      </a>
+      <span> · </span>
+      <% var h = new Date().getHours() %>
+      <% var x = "am" %>
+      <% var min = new Date().getMinutes() %>
+      <% var stringMin = min.toString() %>
+      <% if (min < 10) { stringMin = "0" + min.toString()} %>
+      <% if (h >= 13) { h = h - 12; x = "pm" } else { x = "am" } %>
+      <% var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %>
+      <span class="date" ><%= month[new Date().getMonth()] %> <%= new Date().getDate() %> at <%= h %>:<%= stringMin %><%= x %></span>
+      <div style="text-align: right;">
+        <a href="/articles/<%= article._id %>/edit" class="btn btn-small" style="padding: 6px 16px 7px 16px;">Edit</a>
+        <form class="delete-button" action="/articles/<%= article._id %>?_method=DELETE" method="post" style="margin-top: -25px; margin-right: 65px;" >
+            <input type="submit" value="Delete" class="btn btn-small">
+        </form>
+      </div>
+    </p>
+  </div>
 <% }) %>

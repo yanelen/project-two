@@ -120,14 +120,16 @@ label {
 .articles {
   text-align: left;
   margin-bottom: 50px;
+  font-size: 16px;
 }
 
-.article {
+.category {
   color: #c7222a;
   text-decoration: none;
+  font-size: 18px;
 }
 
-.article:hover {
+.category:hover {
   color: yellow;
   text-decoration: none;
 }
@@ -140,4 +142,9 @@ label {
 .author:hover {
   color: yellow;
   text-decoration: none;
+}
+
+.date {
+  color: #828282;
+  font-size: 14px;
 }
