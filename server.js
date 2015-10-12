@@ -16,7 +16,7 @@ mongoose.connect(MONGOURI + "/" + dbname);
 var Article = mongoose.model("article", {
   author: String,
   category: String,
-  content: { type: String, maxlength: 1000 },
+  content: String,
   date: { type: Date, default: Date.now }
 });
 
@@ -151,6 +151,7 @@ server.get('/authors/:name', function (req, res) {
     }
   });
 });
+
 
 server.get('/categories/:name', function (req, res) {
   var categoryName = req.params.name;

@@ -1,6 +1,7 @@
-<a class="btn btn-grey" href="/articles/new">Back to articles</a>
+<a href="/articles/new"><img class="icon" src="/images/doc.svg" width="30" heigh="30"></a>
+<a class="write" href="/articles">Back to articles</a>
 
-<h1>Subject: <%= category %></h1>
+<h3>Subject: <%= category %></h3>
 
 <% articles.reverse().forEach(function (article) { %>
   <div class="articles">
@@ -11,7 +12,9 @@
     <p style="font-size: 16px">
       <%= article.content %>
       <br>
-      by
+      <span class="by" >
+        by
+      </span>
       <a class="author" href="/authors/<%= article.author %>">
         <%= article.author %>
       </a>
@@ -24,9 +27,9 @@
       <% if (h >= 13) { h = h - 12; x = "pm" } else { x = "am" } %>
       <% var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %>
       <span class="date" ><%= month[new Date().getMonth()] %> <%= new Date().getDate() %> at <%= h %>:<%= stringMin %><%= x %></span>
-      <div style="text-align: right;">
-        <a href="/articles/<%= article._id %>/edit" class="btn btn-small" style="padding: 6px 16px 7px 16px;">Edit</a>
-        <form class="delete-button" action="/articles/<%= article._id %>?_method=DELETE" method="post" style="margin-top: -25px; margin-right: 65px;" >
+      <div style="text-align: right">
+        <a href="/articles/<%= article._id %>/edit" class="btn btn-small" style="padding: 6px 16px 7px 16px; margin-right: 80px;">Edit</a>
+        <form class="delete-button" action="/articles/<%= article._id %>?_method=DELETE" method="post" style="margin-top: -25px; text-align: right; " >
             <input type="submit" value="Delete" class="btn btn-small">
         </form>
       </div>

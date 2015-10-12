@@ -69,18 +69,8 @@ body {
   display: inline;
 }
 
-.btn-grey {
-  background-color: lightgrey;
-  color: white;
-  margin-bottom: 20px;
-}
-
-.btn-grey:hover {
-  color: darkgrey;
-}
-
 @media screen and (min-width: 768px) {
-  .header,``
+  .header,
   .marketing,
   .footer {
     padding-right: 0;
@@ -94,11 +84,6 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
-
-  .delete-button {
-    margin-right: 200px;
-  }
-
 }
 
 h2 {
@@ -106,9 +91,9 @@ h2 {
 }
 
 form {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 550px;
 }
 
 label {
@@ -144,7 +129,37 @@ label {
   text-decoration: none;
 }
 
+.write {
+  color: #c7222a;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.write:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
 .date {
   color: #828282;
   font-size: 14px;
+}
+
+.icon {
+  fill: #c7222a;
+  margin-top: -10px;
+  padding-right: 5px;
+}
+
+.icon:hover {
+  fill: yellow;
+}
+
+h3 {
+  color: #787878;
+  margin-bottom:20px;
+}
+
+.by {
+  color: #787878;
 }
