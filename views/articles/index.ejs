@@ -17,15 +17,14 @@
         <%= article.author %>
       </a>
       <span> · </span>
-      <% var h = new Date().getHours() %>
+      <% var h = article.date.getHours() %>
       <% var x = "am" %>
-      <% var min = new Date().getMinutes() %>
+      <% var min = article.date.getMinutes() %>
       <% var stringMin = min.toString() %>
       <% if (min < 10) { stringMin = "0" + min.toString()} %>
       <% if (h >= 13) { h = h - 12; x = "pm" } else { x = "am" } %>
       <% var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %>
-      <span class="date" ><%= article.date.toLocaleDateString() %> at <%= article.date.getHours() %>:<%= article.date.getMinutes() %><%= x %></span>
-      <!-- <span class="date" ><%= month[new Date().getMonth()] %> <%= new Date().getDate() %> at <%= h %>:<%= stringMin %><%= x %></span> -->
+      <span class="date" ><%= month[article.date.getMonth()] %> <%= article.date.getDate() %> at <%= h %>:<%= stringMin %><%= x %></span>
       <div style="text-align: right">
         <a href="/articles/<%= article._id %>/edit" class="btn btn-small" style="padding: 6px 16px 7px 16px; margin-right: 80px;">Edit</a>
         <form class="delete-button" action="/articles/<%= article._id %>?_method=DELETE" method="post" style="margin-top: -25px; text-align: right; " >

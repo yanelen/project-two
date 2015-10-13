@@ -100,7 +100,6 @@ server.get('/articles/:id/edit', function (req, res) {
 server.patch('/articles/:id', function (req, res) {
   var articleID = req.params.id;
   var articleParams = req.body.article;
-
   Article.findOne({
     _id: articleID
   }, function (err, foundArticle) {
@@ -268,7 +267,6 @@ server.patch('/categories/:name/:id', function (req, res) {
     }
   });
 });
-
 
 server.listen(4321, function () {
   console.log("CONNECTED");
