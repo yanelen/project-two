@@ -3,9 +3,10 @@
 <p></p>
 <% articles.reverse().forEach(function (article) { %>
   <div class="articles">
-    <a class="category" href="/categories/<%= article.category %>">
-    <%= article.category %>
-    </a>
+      <a class="category" href="/categories/<%= article.category %>">
+        <%= article.category %>
+      </a>
+    </p>
     <p style="font-size: 16px">
       <%= article.content %>
       <br>
@@ -30,6 +31,5 @@
               <input type="submit" value="Delete" class="btn btn-small">
           </form>
       </div>
-    </p>
   </div>
 <% }) %>
