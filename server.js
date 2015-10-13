@@ -269,6 +269,6 @@ server.patch('/categories/:name/:id', function (req, res) {
   });
 });
 
-server.listen(4321, function () {
+server.listen(PORT, function () {
   console.log("CONNECTED");
 });
