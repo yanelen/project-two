@@ -8,7 +8,7 @@ var express = require('express'),
     mongoose = require('mongoose')
     session = require('express-session'),
     PORT = process.env.PORT || 4321,
-    MONGOURI = process.env.MONGO_URI || "mongodb://localhost:27017",
+    MONGOURI = process.env.MONGOLAB_URI || "mongodb://localhost:27017",
     dbname = "wikidb";
 
 mongoose.connect(MONGOURI + "/" + dbname);
