@@ -14,6 +14,7 @@ var express = require('express'),
 mongoose.connect(MONGOURI + "/" + dbname);
 
 var Article = mongoose.model("article", {
+  user: String,
   author: String,
   category: String,
   content: String,
@@ -36,20 +37,20 @@ server.use(methodOverride('_method'));
 server.use(bodyParser.urlencoded({ extended: true }));
 
 server.get('/home', function (req, res) {
-  res.locals.author = undefined;
+  res.locals.user = undefined;
   res.render('home');
 });
 
 server.post('/home', function (req, res) {
-  req.session.authorName = req.body.authorName;
+  req.session.userName = req.body.userName;
   res.redirect(302, '/articles')
 });
 
 server.use(function (req, res, next) {
-  if (req.session.authorName == undefined) {
+  if (req.session.userName == undefined) {
     res.redirect(302, '/home')
   } else {
-    res.locals.author = req.session.authorName;
+    res.locals.user = req.session.userName;
     next();
   }
 })
