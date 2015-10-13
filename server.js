@@ -69,7 +69,7 @@ server.get('/articles', function (req, res) {
 
 server.post('/articles', function (req, res) {
   var article = new Article({
-    author: req.session.authorName,
+    author: req.session.userName,
     content: req.body.article.content,
     category: req.body.article.category
   });
