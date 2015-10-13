@@ -9,7 +9,7 @@
   margin: 5px;
   font-family: 'Candal', sans-serif;
   font-weight: 400;
-  color: #c7222a;
+  color: #23accf;
 }
 
 body {
@@ -57,10 +57,15 @@ body {
 }
 
 .btn {
-  background-color: #c7222a;
+  background-color: #23accf;
   color: white;
   font-size: 18px;
   padding: 5px 20px;
+}
+
+.btn:hover {
+  background-color: #2797b0;
+  color: white;
 }
 
 .btn-small {
@@ -109,34 +114,34 @@ label {
 }
 
 .category {
-  color: #c7222a;
+  color: #23accf;
   text-decoration: none;
   font-size: 18px;
 }
 
 .category:hover {
-  color: yellow;
+  color: #007e9e;
   text-decoration: none;
 }
 
 .author {
-  color: #c7222a;
+  color: #23accf;
   text-decoration: none;
 }
 
 .author:hover {
-  color: yellow;
+  color: #007e9e;
   text-decoration: none;
 }
 
 .write {
-  color: #c7222a;
+  color: #23accf;
   text-decoration: none;
   font-size: 20px;
 }
 
 .write:hover {
-  color: yellow;
+  color: #007e9e;
   text-decoration: none;
 }
 
@@ -146,13 +151,9 @@ label {
 }
 
 .icon {
-  fill: #c7222a;
+  fill: #23accf;
   margin-top: -10px;
   padding-right: 5px;
-}
-
-.icon:hover {
-  fill: yellow;
 }
 
 h3 {

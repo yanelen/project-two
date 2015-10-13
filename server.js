@@ -152,6 +152,19 @@ server.get('/authors/:name', function (req, res) {
   });
 });
 
+server.delete('/authors/:name/:id', function (req, res) {
+  var articleID = req.params.id;
+  var authorName = req.params.name;
+  Article.remove({
+    _id: articleID
+  }, function (err) {
+    if (err) {
+      console.log("ERROR");
+    } else {
+      res.redirect(302, '/authors/' + authorName);
+    }
+  });
+});
 
 server.get('/categories/:name', function (req, res) {
   var categoryName = req.params.name;
@@ -165,6 +178,20 @@ server.get('/categories/:name', function (req, res) {
         category: categoryName,
         articles: categoryArticles
       });
+    }
+  });
+});
+
+server.delete('/categories/:name/:id', function (req, res) {
+  var articleID = req.params.id;
+  var categoryName = req.params.name;
+  Article.remove({
+    _id: articleID
+  }, function (err) {
+    if (err) {
+      console.log("ERROR");
+    } else {
+      res.redirect(302, '/categories/' + categoryName);
     }
   });
 });
