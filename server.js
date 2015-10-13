@@ -70,8 +70,7 @@ server.post('/articles', function (req, res) {
   var article = new Article({
     author: req.session.authorName,
     content: req.body.article.content,
-    category: req.body.article.category,
-    date: req.body.article.date
+    category: req.body.article.category
   });
   article.save(function (err, newArticle) {
     if (err) {
