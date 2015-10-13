@@ -1,4 +1,4 @@
-<a href="/articles/new"><img class="icon" src="/images/doc.svg" width="30" heigh="30"></a>
+<a href="/articles"><img class="icon" src="/images/doc.svg" width="30" heigh="30"></a>
 <a class="write" href="/articles">Back to articles</a>
 
 <h3>Articles by: <%= author %></h3>
@@ -28,7 +28,7 @@
       <% var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %>
       <span class="date" ><%= month[new Date().getMonth()] %> <%= new Date().getDate() %> at <%= h %>:<%= stringMin %><%= x %></span>
       <div style="text-align: right">
-        <a href="/articles/<%= article._id %>/edit" class="btn btn-small" style="padding: 6px 16px 7px 16px; margin-right: 80px;">Edit</a>
+        <a href="/authors/<%= article.author %>/<%= article._id %>/edit" class="btn btn-small" style="padding: 6px 16px 7px 16px; margin-right: 80px;">Edit</a>
         <form class="delete-button" action="/authors/<%= article.author %>/<%= article._id %>?_method=DELETE" method="post" style="margin-top: -25px; text-align: right; " >
             <input type="submit" value="Delete" class="btn btn-small">
         </form>

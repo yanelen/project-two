@@ -166,6 +166,43 @@ server.delete('/authors/:name/:id', function (req, res) {
   });
 });
 
+server.get('/authors/:name/:id/edit', function (req, res) {
+  var articleID = req.params.id;
+  Article.findOne({
+    _id: articleID
+  }, function (err, foundArticle) {
+    if (err) {
+      res.write("ARTICLE ID NOT FOUND");
+      res.end();
+    } else {
+      res.render('authors/edit', {
+        article: foundArticle
+      });
+    }
+  });
+});
+
+server.patch('/authors/:name/:id', function (req, res) {
+  var articleID = req.params.id;
+  var articleParams = req.body.article;
+  var authorName = req.params.name;
+  Article.findOne({
+    _id: articleID
+  }, function (err, foundArticle) {
+    if (err) {
+      console.log("ERROR");
+    } else {
+      foundArticle.update(articleParams, function (err, article) {
+        if (err) {
+          console.log("ERROR");
+        } else {
+          res.redirect(302, '/authors/' + authorName);
+        }
+      });
+    }
+  });
+});
+
 server.get('/categories/:name', function (req, res) {
   var categoryName = req.params.name;
   Article.find({
@@ -195,6 +232,44 @@ server.delete('/categories/:name/:id', function (req, res) {
     }
   });
 });
+
+server.get('/categories/:name/:id/edit', function (req, res) {
+  var articleID = req.params.id;
+  Article.findOne({
+    _id: articleID
+  }, function (err, foundArticle) {
+    if (err) {
+      res.write("ARTICLE ID NOT FOUND");
+      res.end();
+    } else {
+      res.render('categories/edit', {
+        article: foundArticle
+      });
+    }
+  });
+});
+
+server.patch('/categories/:name/:id', function (req, res) {
+  var articleID = req.params.id;
+  var articleParams = req.body.article;
+  var authorName = req.params.name;
+  Article.findOne({
+    _id: articleID
+  }, function (err, foundArticle) {
+    if (err) {
+      console.log("ERROR");
+    } else {
+      foundArticle.update(articleParams, function (err, article) {
+        if (err) {
+          console.log("ERROR");
+        } else {
+          res.redirect(302, '/categories/' + authorName);
+        }
+      });
+    }
+  });
+});
+
 
 server.listen(4321, function () {
   console.log("CONNECTED");
