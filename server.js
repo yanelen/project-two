@@ -53,7 +53,7 @@ server.use(function (req, res, next) {
     res.locals.user = req.session.userName;
     next();
   }
-})
+});
 
 server.get('/articles', function (req, res) {
   Article.find({}, function (err, allArticles) {
