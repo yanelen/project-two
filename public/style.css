@@ -177,3 +177,8 @@ h3 {
 .by {
   color: #787878;
 }
+
+.user {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
