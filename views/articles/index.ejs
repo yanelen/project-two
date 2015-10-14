@@ -17,7 +17,7 @@
         <%= article.author %>
       </a>
       <span> · </span>
-      <% var h = article.date.getHours()  %>
+      <% var h = article.date.getHours() - article.date.getTimezoneOffset() / 60 %>
       <% var x = "am" %>
       <% var min = article.date.getMinutes() %>
       <% var stringMin = min.toString() %>
