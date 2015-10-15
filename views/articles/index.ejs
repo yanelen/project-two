@@ -36,24 +36,11 @@
       <% var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %>
       <span class="date" ><%= month[article.date.getMonth()] %> <%= article.date.getDate() %> at <%= h %>:<%= stringMin %><%= x %></span>
       <div style="text-align: right">
-          <a href="/articles/<%= article._id %>/edit" class="btn btn-small" id="edit" style="padding: 6px 16px 7px 16px; margin-right: 80px;">Edit</a>
-
-          <script>
-            if ('<%- article.author %>' !== '<%- user %>') {
-              $('#edit').addClass('inactive');
-            }
-          </script>
-
+          <a href="/articles/<%= article._id %>/edit" class="btn btn-small <%=(article.author !== user)?'inactive':'' %>" id="edit" style="padding: 6px 16px 7px 16px; margin-right: 80px;">Edit</a>
           <form class="delete-button" action="/articles/<%= article._id %>?_method=DELETE" method="post" style="margin-top: -25px; text-align: right; " >
-              <input type="submit" value="Delete" class="btn btn-small" id="delete">
-
-              <script>
-                if ('<%- article.author %>' !== '<%- user %>') {
-                  $('#delete').addClass('inactive');
-                }
-              </script>
-
+              <input type="submit" value="Delete" class="btn btn-small <%=(article.author !== user)?'inactive':'' %>" id="delete">
           </form>
       </div>
+    </p>
   </div>
 <% }) %>
