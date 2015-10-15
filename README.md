@@ -1,8 +1,8 @@
 ## README: Wiki by Yanelen Huang
 
-Wiki version 1.0 10/10/15
+Wiki version 1.0 10/16/15
 
-This is a single page application to play the game Tic Tac Toe in an internet browser.
+This is a single page application to ... in an internet browser.
 The app is visible at:
 
 
