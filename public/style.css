@@ -20,7 +20,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: lightgrey;
-  background-image: url('images/bg.jpg');
+  background-image: url('images/bg2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -61,7 +61,7 @@ body {
   border-bottom: 1px solid #e5e5e5;
   text-align: center;
   padding: 20px 24px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .btn {
