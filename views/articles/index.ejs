@@ -42,4 +42,14 @@
           </form>
       </div>
   </div>
+
 <% }) %>
+
+<script>
+<% articles.reverse().forEach(function (article) { %>
+ if ('<%- article.author %>' !== '<%- user %>') {
+   $('#edit').addClass('inactive');
+   $('#delete').addClass('inactive');
+   }
+<% }) %>
+</script>

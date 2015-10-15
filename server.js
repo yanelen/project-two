@@ -14,7 +14,6 @@ var express = require('express'),
 mongoose.connect(MONGOURI + "/" + dbname);
 
 var Article = mongoose.model("article", {
-  user: String,
   author: String,
   category: String,
   content: String,
@@ -61,7 +60,7 @@ server.get('/articles', function (req, res) {
       res.redirect(302, '/home');
     } else {
       res.render('articles/index', {
-        articles: allArticles
+        articles: allArticles,
       });
     }
   });
