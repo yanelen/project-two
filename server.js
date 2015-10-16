@@ -97,16 +97,13 @@ server.get('/articles/:id/edit', function (req, res) {
   });
 });
 
-
 server.patch('/articles/:id', function (req, res) {
-
-  req.body.article.date = Date.now
-
+  req.body.article.date = Date.now();
   Article.update({ _id: req.params.id }, req.body.article, function (err, result) {
     if (err) {
       console.log(err);
     } else {
-      res.redirect(301, '/articles/' + req.params.id);
+      res.redirect(301, '/articles/');
     }
   })
 });
