@@ -97,24 +97,18 @@ server.get('/articles/:id/edit', function (req, res) {
   });
 });
 
+
 server.patch('/articles/:id', function (req, res) {
-  var articleID = req.params.id;
-  var articleParams = req.body.article;
-  Article.findOne({
-    _id: articleID
-  }, function (err, foundArticle) {
+
+  req.body.article.date = Date.now
+
+  Article.update({ _id: req.params.id }, req.body.article, function (err, result) {
     if (err) {
-      console.log("ERROR");
+      console.log(err);
     } else {
-      foundArticle.update(articleParams, function (err, article) {
-        if (err) {
-          console.log("ERROR");
-        } else {
-          res.redirect(302, "/articles");
-        }
-      });
+      res.redirect(301, '/articles/' + req.params.id);
     }
-  });
+  })
 });
 
 server.delete('/articles/:id', function (req, res) {
