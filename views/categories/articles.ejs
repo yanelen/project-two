@@ -2,13 +2,13 @@
 <a class="write" href="/articles">Back to articles</a>
 
 <h3>Category: <%= category %></h3>
-
 <% articles.reverse().forEach(function (article) { %>
   <div class="articles">
-    <a class="category" href="/categories/<%= article.category %>">
-    <%= article.category %>
-    </a>
-    <br>
+    <p>
+      <a class="category" href="/categories/<%= article.category %>">
+        <%= article.category %>
+      </a>
+   </p>
     <p style="font-size: 16px">
       <%= article.content %>
       <br>
