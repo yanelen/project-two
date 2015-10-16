@@ -172,24 +172,15 @@ server.get('/authors/:name/:id/edit', function (req, res) {
 });
 
 server.patch('/authors/:name/:id', function (req, res) {
-  var articleID = req.params.id;
-  var articleParams = req.body.article;
+  req.body.article.date = Date.now();
   var authorName = req.params.name;
-  Article.findOne({
-    _id: articleID
-  }, function (err, foundArticle) {
+  Article.update({ _id: req.params.id }, req.body.article, function (err, result) {
     if (err) {
-      console.log("ERROR");
+      console.log(err);
     } else {
-      foundArticle.update(articleParams, function (err, article) {
-        if (err) {
-          console.log("ERROR");
-        } else {
-          res.redirect(302, '/authors/' + authorName);
-        }
-      });
+      res.redirect(302, '/authors/' + authorName);
     }
-  });
+  })
 });
 
 server.get('/categories/:name', function (req, res) {
@@ -239,24 +230,15 @@ server.get('/categories/:name/:id/edit', function (req, res) {
 });
 
 server.patch('/categories/:name/:id', function (req, res) {
-  var articleID = req.params.id;
-  var articleParams = req.body.article;
-  var authorName = req.params.name;
-  Article.findOne({
-    _id: articleID
-  }, function (err, foundArticle) {
+  req.body.article.date = Date.now();
+  var categoryName = req.params.name;
+  Article.update({ _id: req.params.id }, req.body.article, function (err, result) {
     if (err) {
-      console.log("ERROR");
+      console.log(err);
     } else {
-      foundArticle.update(articleParams, function (err, article) {
-        if (err) {
-          console.log("ERROR");
-        } else {
-          res.redirect(302, '/categories/' + authorName);
-        }
-      });
+      res.redirect(302, '/categories/' + categoryName);
     }
-  });
+  })
 });
 
 server.listen(PORT, function () {
