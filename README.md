@@ -3,7 +3,7 @@
 Wiki version 1.0 10/16/15
 
 This is a single page wiki application for a group of people to write articles in an internet browser.
-The app is visible at: https://polar-tor-5573.herokuapp.com/home
+The app is visible at: http://ny-wiki.herokuapp.com
 
 
 ### Overview
