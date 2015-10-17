@@ -8,16 +8,16 @@ The app is visible at: http://ny-wiki.herokuapp.com
 
 ### Overview
 
-Enter user's name on the first screen. It will take the user to the home page with all the articles. A new article can be created by selecting "Add an article". Articles can be edited or deleted only by the author. All articles have the time that an article was created. Articles can be organized by category or author by clicking on the category or author.
+The app is preceded by entering the user's name. It will take the user to the page with all the articles. A new article can be created by selecting "Add an article". Articles can be edited or deleted only by the author. Every article has the time at which it was created or edited. Articles can be organized by subject or author by clicking on the subject or the author.
 
 
 ### Getting Started
 
-installation: no installation necessary.
+Installation: no installation necessary.
 
 Requisites: an internet connection and a browser on a desktop, a tablet or a mobile phone.
 
 
-### Developer Info
+### Developer/Designer Info
 
-The background image was taken by Yanelen Huang in February, 2105 in New York. The app was developed in HTML, CSS, JavaScript, node.js, express and mongoose by Yanelen Huang as the second project in Web Development Immersive at General Assembly New York in October 2015.
+The background image was taken by Yanelen Huang in February, 2105 in New York. The app was developed and designed in HTML, CSS, JavaScript, node.js, express and mongoose by Yanelen Huang as the second project in Web Development Immersive at General Assembly New York in October 2015.
