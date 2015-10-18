@@ -20,4 +20,4 @@ Requisites: an internet connection and a browser on a desktop, a tablet or a mob
 
 ### Developer/Designer Info
 
-The background image was taken by Yanelen Huang in February, 2105 in New York. The app was developed and designed in HTML, CSS, JavaScript, node.js, express and mongoose by Yanelen Huang as the second project in Web Development Immersive at General Assembly New York in October 2015.
+The background image was taken by Yanelen Huang in February, 2015 in New York. The app was developed and designed in HTML, CSS, JavaScript, node.js, express and mongoose by Yanelen Huang as the second project in Web Development Immersive at General Assembly New York in October 2015.
