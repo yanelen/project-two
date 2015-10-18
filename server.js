@@ -13,6 +13,7 @@ var express = require('express'),
 
 mongoose.connect(MONGOURI + "/" + dbname);
 
+//create a database model
 var Article = mongoose.model("article", {
   author: String,
   category: String,
@@ -35,16 +36,19 @@ server.use(expressEjsLayouts);
 server.use(methodOverride('_method'));
 server.use(bodyParser.urlencoded({ extended: true }));
 
+//render homepage
 server.get('/home', function (req, res) {
   res.locals.user = undefined;
   res.render('home');
 });
 
+//save a new user
 server.post('/home', function (req, res) {
   req.session.userName = req.body.userName;
   res.redirect(302, '/articles')
 });
 
+//save a new user
 server.use(function (req, res, next) {
   if (req.session.userName == undefined) {
     res.redirect(302, '/home')
@@ -54,6 +58,7 @@ server.use(function (req, res, next) {
   }
 });
 
+//display all articles
 server.get('/articles', function (req, res) {
   Article.find({}, function (err, allArticles) {
     if (err) {
@@ -66,6 +71,7 @@ server.get('/articles', function (req, res) {
   });
 });
 
+//create a new article
 server.post('/articles', function (req, res) {
   var article = new Article({
     author: req.session.userName,
@@ -81,6 +87,7 @@ server.post('/articles', function (req, res) {
   });
 });
 
+//return an HTML form for editing an article
 server.get('/articles/:id/edit', function (req, res) {
   var articleID = req.params.id;
   Article.findOne({
@@ -97,6 +104,7 @@ server.get('/articles/:id/edit', function (req, res) {
   });
 });
 
+//update a specific article
 server.patch('/articles/:id', function (req, res) {
   req.body.article.date = Date.now();
   Article.update({ _id: req.params.id }, req.body.article, function (err, result) {
@@ -108,6 +116,7 @@ server.patch('/articles/:id', function (req, res) {
   })
 });
 
+//delete a specific article
 server.delete('/articles/:id', function (req, res) {
   var articleID = req.params.id;
   Article.remove({
@@ -121,10 +130,12 @@ server.delete('/articles/:id', function (req, res) {
   });
 });
 
+//return an HTML form for creating a new article
 server.get('/articles/new', function (req, res) {
   res.render('articles/new');
 });
 
+//display all articles by a specific author
 server.get('/authors/:name', function (req, res) {
   var authorName = req.params.name;
   Article.find({
@@ -141,6 +152,7 @@ server.get('/authors/:name', function (req, res) {
   });
 });
 
+//delete a specific article on the author's page
 server.delete('/authors/:name/:id', function (req, res) {
   var articleID = req.params.id;
   var authorName = req.params.name;
@@ -155,6 +167,7 @@ server.delete('/authors/:name/:id', function (req, res) {
   });
 });
 
+//return an HTML form for editing an article
 server.get('/authors/:name/:id/edit', function (req, res) {
   var articleID = req.params.id;
   Article.findOne({
@@ -171,6 +184,7 @@ server.get('/authors/:name/:id/edit', function (req, res) {
   });
 });
 
+//update a specific article
 server.patch('/authors/:name/:id', function (req, res) {
   req.body.article.date = Date.now();
   var authorName = req.params.name;
@@ -183,6 +197,7 @@ server.patch('/authors/:name/:id', function (req, res) {
   })
 });
 
+//display all articles by a specific author
 server.get('/categories/:name', function (req, res) {
   var categoryName = req.params.name;
   Article.find({
@@ -199,6 +214,7 @@ server.get('/categories/:name', function (req, res) {
   });
 });
 
+//delete a specific article on the subject's page
 server.delete('/categories/:name/:id', function (req, res) {
   var articleID = req.params.id;
   var categoryName = req.params.name;
@@ -213,6 +229,7 @@ server.delete('/categories/:name/:id', function (req, res) {
   });
 });
 
+//return an HTML form for editing an article
 server.get('/categories/:name/:id/edit', function (req, res) {
   var articleID = req.params.id;
   Article.findOne({
@@ -229,6 +246,7 @@ server.get('/categories/:name/:id/edit', function (req, res) {
   });
 });
 
+//update a specific article
 server.patch('/categories/:name/:id', function (req, res) {
   req.body.article.date = Date.now();
   var categoryName = req.params.name;

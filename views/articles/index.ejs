@@ -18,6 +18,7 @@
         <%= article.author %>
       </a>
       <span> · </span>
+      <!-- format the date and time -->
       <% var h = article.date.getHours() %>
       <% var x = "am" %>
       <% var min = article.date.getMinutes() %>
@@ -39,6 +40,7 @@
       <div style="text-align: right">
           <a href="/articles/<%= article._id %>/edit" class="btn btn-small <%=(article.author !== user)?'inactive':'' %>" style="padding: 6px 16px 7px 16px; margin-right: 80px;">Edit</a>
           <form class="delete-button" action="/articles/<%= article._id %>?_method=DELETE" method="post" style="margin-top: -25px; text-align: right; " >
+              <!-- if the user is not the author, make the buttons inactive -->
               <input type="submit" value="Delete" class="btn btn-small <%=(article.author !== user)?'inactive':'' %>">
           </form>
       </div>
