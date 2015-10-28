@@ -197,7 +197,7 @@ server.patch('/authors/:name/:id', function (req, res) {
   })
 });
 
-//display all articles by a specific author
+//display all articles of a specific subject
 server.get('/categories/:name', function (req, res) {
   var categoryName = req.params.name;
   Article.find({
